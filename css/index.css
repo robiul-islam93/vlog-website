@@ -40,6 +40,7 @@
   background-image: url(../img/Rectangle\ 4.png);
   max-width: 100%;
   height: 100vh;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -52,7 +53,8 @@
 .navbar {
   font-size: 20px;
   font-weight: 700;
-  background: url(../img/navbar-bs-shape.png);
+  height: 18vh;
+  background-image: url(../img/navbar-bs-shape.png);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -89,7 +91,7 @@
 }
 
 .logo1 img {
-  width: 120px;
+  width: 150px;
 }
 
 .navbar-brand {
@@ -97,6 +99,11 @@
 }
 
 @media screen and (max-width: 990px) {
+  .navbar {
+    background: #938b8b;
+    height: auto;
+  }
+
   .navbar-brand {
     display: block;
   }
@@ -133,10 +140,6 @@
   font-size: 1.2em;
 }
 
-.hero-btn a {
-  padding: 10px 25px;
-}
-
 .logo {
   color: #221414;
   text-shadow: 2px 2px 5px royalblue;
@@ -148,7 +151,7 @@
 }
 
 .text-section {
-  padding-top: 12%;
+  padding-top: 18%;
   color: #fff;
 }
 
@@ -171,13 +174,66 @@
   font-family: var(--header-font);
   color: #fff;
 }
+
 .hero-btn a {
-  border: none;
-  border: 2px solid #46acfb;
-  background-color: #46acfb;
-  color: #fff;
   text-decoration: none;
+  color: #ffffff;
+}
+
+.hero-btn {
+  position: relative;
+  border: none;
+  font-size: 14px;
+  font-family: inherit;
+  color: #fff;
+  width: 12em;
+  margin: auto;
+  height: 3em;
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 3em;
+  text-align: center;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 300%;
+  border-radius: 30px;
+  z-index: 1;
+}
+
+.hero-btn:hover {
+  animation: ani 8s linear infinite;
+  border: none;
+}
+
+@keyframes ani {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 400%;
+  }
+}
+
+.hero-btn:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
   border-radius: 35px;
+  transition: 1s;
+}
+
+.hero-btn:hover::before {
+  filter: blur(20px);
+}
+
+.hero-btn:active {
+  background: linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
 }
 
 @media screen and (max-width: 1400px) {
@@ -198,7 +254,12 @@
   }
 
   .text-section {
-    padding-top: 18%;
+    padding-top: 35%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .text-section {
+    padding-top: 70%;
   }
 }
 
@@ -230,15 +291,55 @@
   width: 100%;
 }
 
-.video-gallery-btn button {
-  border: none;
+.video-gallery-btn {
+  margin-top: 50px;
+}
+
+.video-gallery-btn a {
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  border-radius: 10px;
+  color: #000;
+  text-decoration: none;
+  font-size: 24px;
+  margin: 30px 0;
+  padding: 10px 25px;
+  border: 2px solid var(--sky-blue);
+  text-transform: uppercase;
+  overflow: hidden;
+  z-index: 2;
+  transition: 0.6s all ease;
+}
+
+.video-gallery-btn a::before {
+  background: var(--sky-blue);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1.3s ease;
+  z-index: -1;
+}
+.video-gallery-btn a::before {
+  width: 100%;
+  height: 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.video-gallery-btn a:hover::before {
+  height: 360px;
+}
+
+.video-gallery-btn a {
+  border: 2px solid var(--sky-blue);
+  text-decoration: none;
   padding: 10px 30px;
-  background-color: #46acfb;
   font-size: 1em;
-  color: #fff;
+  color: #020202;
   border-radius: 30px;
   text-align: center;
-  margin-top: 50px;
 }
 
 @media screen and (max-width: 990px) {
@@ -284,14 +385,42 @@
 
 .traveling-btn a {
   text-decoration: none;
-  padding: 10px 30px;
-  border: 1px solid;
-  border: none;
-  background: #46acfb;
-  color: #fff;
-  border-radius: 50px;
-  text-align: center;
-  margin-right: 10px;
+}
+
+.traveling-btn a {
+  position: relative;
+  display: inline-block;
+  font-weight: 650;
+  border-radius: 35px;
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 25px;
+  border: 2px solid var(--sky-blue);
+  text-transform: uppercase;
+  overflow: hidden;
+  z-index: 2;
+  transition: 0.6s all ease;
+}
+
+.traveling-btn a::before {
+  background: var(--sky-blue);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1.3s ease;
+  z-index: -1;
+}
+.traveling-btn a::before {
+  width: 100%;
+  height: 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.traveling-btn a:hover::before {
+  height: 360px;
 }
 
 @media screen and (max-width: 990px) {
@@ -487,19 +616,93 @@
   font-weight: 500;
 }
 
-.social-icons {
-  margin-top: 30px;
+.bg-vlog-img {
+  width: 50%;
+  height: 50vh;
+  background-size: cover;
+  object-fit: cover;
+  margin: auto;
+  background-image: url(../img/pngwing.com.png);
+  background-repeat: no-repeat;
 }
 
-.social-icons a {
-  text-decoration: none;
-  padding: 0;
-  margin-right: 20px;
+.pothik-logo img {
+  width: 200px;
+  margin: auto;
+  display: block;
+  padding-left: 5%;
+  padding-top: 35%;
 }
 
-.social-icons a i {
-  color: #848484;
-  font-size: 2.6em;
+.footer-menu a {
+  transition: 0.5s;
+  font-weight: 800 !important;
+}
+
+.footer-menu a:hover {
+  color: var(--sky-blue);
+}
+
+@media screen and (max-width: 1150px) {
+  .bg-vlog-img {
+    width: 100%;
+    height: 70vh;
+  }
+
+  .pothik-logo img {
+    width: 40%;
+    padding-left: 5%;
+    padding-top: 35%;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .bg-vlog-img {
+    width: 100%;
+    height: 55vh;
+  }
+
+  .pothik-logo img {
+    width: 35%;
+    padding-left: 5%;
+    padding-top: 30%;
+  }
+}
+@media screen and (max-width: 770px) {
+  .bg-vlog-img {
+    width: 100%;
+    height: 80vh;
+  }
+
+  .pothik-logo img {
+    width: 40%;
+    padding-left: 5%;
+    padding-top: 30%;
+  }
+}
+@media screen and (max-width: 610px) {
+  .bg-vlog-img {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .pothik-logo img {
+    width: 40%;
+    padding-left: 5%;
+    padding-top: 30%;
+  }
+}
+@media screen and (max-width: 485px) {
+  .bg-vlog-img {
+    width: 100%;
+    height: 40vh;
+  }
+
+  .pothik-logo img {
+    width: 40%;
+    padding-left: 5%;
+    padding-top: 35%;
+  }
 }
 
 @media screen and (max-width: 575px) {
@@ -514,6 +717,106 @@
   .social-icons a i {
     font-size: 2.2em;
   }
+}
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  text-decoration: none;
+  height: 120px;
+  width: 100%;
+  padding-top: 40px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  left: 0;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 25%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: #fff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #ff718a;
+  color: #fff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #e4405f;
+  color: #fff;
+}
+.wrapper .linkedin:hover,
+.wrapper .linkedin:hover .tooltip,
+.wrapper .linkedin:hover .tooltip::before {
+  background: #3f7ccd;
+  color: #fff;
+}
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background: #fa0036;
+  color: #fff;
 }
 
 /* Footer End */
