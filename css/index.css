@@ -640,6 +640,10 @@
   font-weight: 800 !important;
 }
 
+.footer-menu li {
+  margin-top: 20px;
+}
+
 .footer-menu a:hover {
   color: var(--sky-blue);
 }
@@ -819,6 +823,40 @@
   background: #fa0036;
   color: #fff;
 }
+.wrapper .Pinterest:hover,
+.wrapper .Pinterest:hover .tooltip,
+.wrapper .Pinterest:hover .tooltip::before {
+  background: #fa0036;
+  color: #fff;
+}
+.wrapper .Twitter:hover,
+.wrapper .Twitter:hover .tooltip,
+.wrapper .Twitter:hover .tooltip::before {
+  background: #2e60d4;
+  color: #fff;
+}
+
+/* back to top btn */
+
+.back-top-icon {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.back-top-icon img {
+  max-width: 60%;
+  padding-left: 25%;
+  padding-bottom: 10%;
+}
+
+@media screen and (max-width: 575px) {
+  .back-top-icon {
+    padding-bottom: 50px;
+  }
+}
+
+/* back to top btn end */
 
 /* Footer End */
 
